@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>calculate bmi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="w3-container ">
+	<div class="w3-display-container w3-margin-bottom">
+<button ion-button (click)="addBmi()" class="float">
+	<ion-icon name="add" class="my-float"></ion-icon>
+</button>
+	</div>
+
+<br>
+<ion-card >
+	<table *ngIf="bmis != null" class="w3-table">
+		<tr>
+			<th>#</th>
+			<th>Bmi</th>
+			<th>Date</th>
+			<th>Comment</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr *ngFor="let bmi of bmis;  let i = index">
+			<td>{{ i+1 }}</td>
+			<td>{{ bmi.bmi | number }}</td>
+			<td>{{ bmi.todate | date }}</td>
+			<td ><span text="{{ bmi.color }}">{{ bmi.comment }}</span></td>
+			<td><button class="w3-text-red w3-btn" ion-button (click)="delete(bmi.$key)"><ion-icon name="trash-outline"></ion-icon>	</button></td>
+		</tr>
+	</table>
+</ion-card>
+
+</ion-content>

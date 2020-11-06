@@ -24,3 +24,108 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.title-default{
+	text-align: center;
+	color: #008080;
+	text-transform: capitalize;
+	display: flex;
+	align-content: space-between;
+
+}
+.green{
+	color: #66ff33;
+
+}
+.teal{
+  color: #008080;
+}
+
+.success {
+	background-color: #4CAF50;
+} 
+.success:hover {
+	background-color: #46a049;
+}
+
+.info {
+	background-color: #2196F3;
+} 
+.info:hover {
+	background: #0b7dda;
+}
+
+.warning {
+	background-color: #ff9800;
+} 
+.warning:hover {
+	background: #e68a00;
+}
+
+.danger {
+	background-color: #f44336;} 
+.danger:hover {
+	background: #da190b;
+}
+
+.default {
+	background-color: #e7e7e7; 
+	color: black;
+} 
+.default:hover {
+	background: #ddd;
+}
+.round-btn{
+	border-radius: 50%;
+	text-align: center;
+}
+.btn{
+	border: none;
+	color: white;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	border: 1px solid #EEE;
+}
+.btn-sm{
+	font-size: 20px;
+	padding: 10px;
+	text-align: center;
+	border: none;
+	border-radius: 4px;
+
+}
+
+.auth{
+	margin-top: 50%;
+	padding: 10px;
+	border: 1px solid #EEE;
+	border-radius: 3px;
+
+}
+.contents{
+	margin: 5px;
+}
+
+.float{
+	position:fixed;
+	width:50px;
+	height:50px;
+	bottom:30px;
+	right:30px;
+	background-color:#0C9;
+  border:1px solid #003326;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  margin-bottom: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.my-float{
+  font-size: 250% ;
+  font-weight: 900;
+}

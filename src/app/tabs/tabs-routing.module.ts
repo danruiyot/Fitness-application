@@ -4,31 +4,44 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'home',
+        loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'foods',
+        loadChildren: () => import('../foods/foods.module').then(m => m.FoodsPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'exercise',
+        loadChildren: () => import('../exercise/exercise.module').then(m => m.ExercisePageModule)
+      },
+      {
+        path: 'recipe',
+        loadChildren: () => import('../recipe/recipe.module').then(m => m.RecipePageModule)
+      },
+
+      {
+        path: 'bmi',
+        loadChildren: () => import('../bmi/bmi.module').then(m => m.BmiPageModule)
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: 'home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: 'home',
     pathMatch: 'full'
   }
 ];

@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-title>
+	<div class="w3-row">
+	<div class="w3-col s4">
+	
+	&nbsp;
+	</div>
+	<div class="w3-col s4">Profile</div>
+	<div class="w3-col s4">&nbsp;</div>
+	</div>
+	</ion-title>
+</ion-header>
+
+<ion-content padding class="w3-container">
+	<table class="w3-table-all w3-container" *ngIf="profile != null">
+		<tr>
+			<th>User name</th>
+			<td>{{ profile.username }}</td>
+		</tr>
+		<tr>
+			<th>User Email</th>
+			<td>{{ profile.email }}</td>
+		</tr>
+		<tr>
+			<th>Gender</th>
+			<td>{{ profile.gender }}</td>
+		</tr>
+
+		<tr>
+			<th>Age</th>
+			<td>{{ profile.age }}</td>
+		</tr>
+	</table>
+
+<button ion-button class="w3-btn w3-round w3-teal" (click)="updateProfile()" padding>update</button>
+</ion-content>

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+	<div class="w3-row">
+	<div class="w3-col s4">
+	<ion-icon name="arrow-back-outline" *ngIf="recipe != null" (click)="back()"></ion-icon>
+	&nbsp;
+	</div>
+	<div class="w3-col s4">Recipe</div>
+	<div class="w3-col s4">&nbsp;</div>
+	</div>
+	</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<table *ngIf="recipe == null" class="w3-table-all">
+		<tr >
+			<th>Recipes</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr *ngFor="let item of recipes" (click)="view(item.$key)">
+			<td><img src="{{ item.image }}" alt="{{ item.name }}" width="50" style="border-radius: 5px;"></td>
+			<td><h3>{{ item.name }}</h3>
+				<span>{{ item.description }}</span> 
+			</td>
+		</tr>
+	</table>
+
+<ion-card>
+	<div *ngIf="recipe != null" class="w3-container">
+	
+			<h2 class="w3-center w3-big">{{ recipe.name }}</h2>
+
+		<br>
+		<h3 class="w3-center">Ingredient</h3>
+		<table class="w3-table-all">
+			<tr>
+				<th>ingredient</th>
+				<th>Amount</th>
+			</tr>
+			<tr *ngFor="let ingr of recipe.ingredient; let i = index">
+				<td>{{ ingr.name  }} </td>
+				<td *ngIf="ingr.amount != null">{{ ingr.amount }} &nbsp; {{ ingr.unit }} </td>
+				<td *ngIf="ingr.amount == null">&nbsp;</td>
+			</tr>
+
+		</table>
+
+		<h3 class="w3-center">steps</h3>
+
+			<ion-list>
+			<ion-item *ngFor="let step of recipe.step; let i = index">
+				<span>{{ i+1 }} </span> &nbsp;
+				<span >{{ step.description }} </span>
+
+			</ion-item>
+			</ion-list>
+
+
+
+	</div>
+</ion-card>
+</ion-content>

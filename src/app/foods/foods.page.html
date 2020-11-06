@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+		<div class="w3-row">
+	<div class="w3-col s4">
+	
+	&nbsp;
+	</div>
+	<div class="w3-col s4">My Food</div>
+	<div class="w3-col s4">&nbsp;</div>
+	</div>
+
+	</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	
+	<ion-searchbar showCancelButton="focus" placeholder="what did you eat today"  (ionInput)="filterList($event)"></ion-searchbar>
+	<table class="w3-table-all" >
+		
+		<tr>
+			<th>Meals</th>
+			<th>Carbohydrates</th>
+			<th>Fat</th>
+			<th>Protein</th>
+			<th>&nbsp;</th>
+		</tr>
+		<tr *ngFor="let item of foods ">
+			<td>{{ item.name }}</td>
+			<td>{{ item.nutrition.carbohydrate }}</td>
+			<td>{{ item.nutrition.fat }}</td>
+			<td>{{ item.nutrition.protein }}</td>
+			<td><ion-icon name="add-circle-outline" class="btn-add" (click)="add(item)" color="success"></ion-icon></td>
+		</tr>
+	</table>
+</ion-content>
